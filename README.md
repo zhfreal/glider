@@ -1,10 +1,10 @@
-# [glider](https://github.com/nadoo/glider)
+# [glider](https://github.com/zhfreal/glider)
 
-[![Go Version](https://img.shields.io/github/go-mod/go-version/nadoo/glider?style=flat-square)](https://go.dev/dl/)
-[![Go Report Card](https://goreportcard.com/badge/github.com/nadoo/glider?style=flat-square)](https://goreportcard.com/report/github.com/nadoo/glider)
-[![GitHub release](https://img.shields.io/github/v/release/nadoo/glider.svg?style=flat-square&include_prereleases)](https://github.com/nadoo/glider/releases)
-[![Actions Status](https://img.shields.io/github/workflow/status/nadoo/glider/Build?style=flat-square)](https://github.com/nadoo/glider/actions)
-[![DockerHub](https://img.shields.io/docker/image-size/nadoo/glider?color=blue&label=docker&style=flat-square)](https://hub.docker.com/r/nadoo/glider)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/zhfreal/glider?style=flat-square)](https://go.dev/dl/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/zhfreal/glider?style=flat-square)](https://goreportcard.com/report/github.com/zhfreal/glider)
+[![GitHub release](https://img.shields.io/github/v/release/zhfreal/glider.svg?style=flat-square&include_prereleases)](https://github.com/zhfreal/glider/releases)
+[![Actions Status](https://img.shields.io/github/workflow/status/zhfreal/glider/Build?style=flat-square)](https://github.com/zhfreal/glider/actions)
+[![DockerHub](https://img.shields.io/docker/image-size/zhfreal/glider?color=blue&label=docker&style=flat-square)](https://hub.docker.com/r/zhfreal/glider)
 
 glider is a forward proxy with multiple protocols support, and also a dns/dhcp server with ipset management features(like dnsmasq).
 
@@ -80,12 +80,12 @@ we can set up local listeners as proxy servers, and forward requests to internet
 
 ## Install
 
-- Binary: [https://github.com/nadoo/glider/releases](https://github.com/nadoo/glider/releases)
-- Docker: `docker pull nadoo/glider`
+- Binary: [https://github.com/zhfreal/glider/releases](https://github.com/zhfreal/glider/releases)
+- Docker: `docker pull zhfreal/glider`
 - ArchLinux: `sudo pacman -S glider`
 - Homebrew: `brew install glider`
 - MacPorts: `sudo port install glider`
-- Source: `go install github.com/nadoo/glider@latest`
+- Source: `go install github.com/zhfreal/glider@latest`
 
 ## Usage
 
@@ -93,7 +93,7 @@ we can set up local listeners as proxy servers, and forward requests to internet
 
 ```bash
 glider -verbose -listen :8443
-# docker run --rm -it nadoo/glider -verbose -listen :8443
+# docker run --rm -it zhfreal/glider -verbose -listen :8443
 ```
 
 #### Help
@@ -223,7 +223,7 @@ Help:
 
 see README.md and glider.conf.example for more details.
 --
-glider 0.16.1, https://github.com/nadoo/glider (glider.proxy@gmail.com)
+glider 0.16.1, https://github.com/zhfreal/glider (glider.proxy@gmail.com)
 ```
 
 </details>
@@ -440,7 +440,7 @@ glider -config CONFIG_PATH
 
 ## Linux Daemon
 
-- systemd: [https://github.com/nadoo/glider/blob/master/systemd/](https://github.com/nadoo/glider/blob/master/systemd/)
+- systemd: [https://github.com/zhfreal/glider/blob/master/systemd/](https://github.com/zhfreal/glider/blob/master/systemd/)
 
 - <details> <summary>docker: click to see details</summary>
 
@@ -449,7 +449,7 @@ glider -config CONFIG_PATH
     docker run -d --name glider --net host --restart=always \
       -v /etc/glider:/etc/glider \
       -v /etc/localtime:/etc/localtime:ro \
-      nadoo/glider -config=/etc/glider/glider.conf
+      zhfreal/glider -config=/etc/glider/glider.conf
     ```
   - run watchtower if you need auto update
     ```
@@ -473,13 +473,13 @@ glider -config CONFIG_PATH
 
 1. Clone the source code:
   ```bash
-  git clone https://github.com/nadoo/glider && cd glider
+  git clone https://github.com/zhfreal/glider && cd glider
   ```
 2. Customize features:
 
   ```bash
   open `feature.go` & `feature_linux.go`, comment out the packages you don't need
-  // _ "github.com/nadoo/glider/proxy/kcp"
+  // _ "github.com/zhfreal/glider/proxy/kcp"
   ```
 
 3. Build it(requires **Go 1.18+** )
@@ -532,7 +532,7 @@ glider -config CONFIG_PATH
 
 ## Links
 
-- [ipset](https://github.com/nadoo/ipset): netlink ipset package for Go.
-- [conflag](https://github.com/nadoo/conflag): a drop-in replacement for Go's standard flag package with config file support.
+- [ipset](https://github.com/zhfreal/ipset): netlink ipset package for Go.
+- [conflag](https://github.com/zhfreal/conflag): a drop-in replacement for Go's standard flag package with config file support.
 - [ArchLinux](https://www.archlinux.org/packages/community/x86_64/glider): a great linux distribution with glider pre-built package.
 - [urlencode](https://www.w3schools.com/tags/ref_urlencode.asp): you should encode special characters in scheme url. e.g., `@`->`%40`

@@ -61,9 +61,9 @@ release:
 nfpms:
   - id: glider
     package_name: glider
-    vendor: nadoo
-    homepage: https://github.com/nadoo/glider
-    maintainer: nadoo
+    vendor: zhfreal
+    homepage: https://github.com/zhfreal/glider
+    maintainer: zhfreal
     description: Glider is a forward proxy with multiple protocols support, and also a dns/dhcp server with ipset management features(like dnsmasq).
     license: GPL-3.0 License
     formats:
