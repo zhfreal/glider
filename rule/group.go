@@ -12,8 +12,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/proxy"
 )
 
 // forwarder slice orderd by priority.

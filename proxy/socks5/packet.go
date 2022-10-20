@@ -4,8 +4,8 @@ import (
 	"errors"
 	"net"
 
-	"github.com/nadoo/glider/pkg/pool"
-	"github.com/nadoo/glider/pkg/socks"
+	"github.com/zhfreal/glider/pkg/pool"
+	"github.com/zhfreal/glider/pkg/socks"
 )
 
 // PktConn .

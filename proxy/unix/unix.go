@@ -4,8 +4,8 @@ import (
 	"net"
 	"net/url"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/proxy"
 )
 
 // Unix domain socket struct.

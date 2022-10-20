@@ -4,7 +4,7 @@ import (
 	"net"
 	"os"
 
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/proxy"
 )
 
 func init() {

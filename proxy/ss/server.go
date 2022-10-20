@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/pkg/pool"
-	"github.com/nadoo/glider/pkg/socks"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/pkg/pool"
+	"github.com/zhfreal/glider/pkg/socks"
+	"github.com/zhfreal/glider/proxy"
 )
 
 var nm sync.Map
@@ -60,7 +60,7 @@ func (s *SS) Serve(c net.Conn) {
 	tgt, err := socks.ReadAddr(sc)
 	if err != nil {
 		log.F("[ss] failed to get target address: %v", err)
-		proxy.Copy(io.Discard, c) // https://github.com/nadoo/glider/issues/180
+		proxy.Copy(io.Discard, c) // https://github.com/zhfreal/glider/issues/180
 		return
 	}
 

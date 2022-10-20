@@ -7,7 +7,7 @@ import (
 
 	"github.com/insomniacslk/dhcp/dhcpv4"
 
-	"github.com/nadoo/glider/pkg/sockopt"
+	"github.com/zhfreal/glider/pkg/sockopt"
 )
 
 func discovery(intf *net.Interface) (found bool) {

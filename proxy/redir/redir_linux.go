@@ -8,8 +8,8 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/proxy"
 )
 
 // RedirProxy struct.

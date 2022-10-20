@@ -4,10 +4,10 @@ import (
 	"net"
 	"net/url"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/proxy"
-	"github.com/nadoo/glider/proxy/http"
-	"github.com/nadoo/glider/proxy/socks5"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/proxy"
+	"github.com/zhfreal/glider/proxy/http"
+	"github.com/zhfreal/glider/proxy/socks5"
 )
 
 // Mixed struct.

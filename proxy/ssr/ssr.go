@@ -7,15 +7,15 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/pkg/socks"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/pkg/socks"
+	"github.com/zhfreal/glider/proxy"
 
-	"github.com/nadoo/glider/proxy/ssr/internal"
-	"github.com/nadoo/glider/proxy/ssr/internal/cipher"
-	"github.com/nadoo/glider/proxy/ssr/internal/obfs"
-	"github.com/nadoo/glider/proxy/ssr/internal/protocol"
-	ssrinfo "github.com/nadoo/glider/proxy/ssr/internal/ssr"
+	"github.com/zhfreal/glider/proxy/ssr/internal"
+	"github.com/zhfreal/glider/proxy/ssr/internal/cipher"
+	"github.com/zhfreal/glider/proxy/ssr/internal/obfs"
+	"github.com/zhfreal/glider/proxy/ssr/internal/protocol"
+	ssrinfo "github.com/zhfreal/glider/proxy/ssr/internal/ssr"
 )
 
 func init() {

@@ -4,7 +4,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/nadoo/conflag"
+	"github.com/zhfreal/conflag"
 )
 
 // Config is config of rule.

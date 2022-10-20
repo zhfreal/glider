@@ -4,8 +4,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/nadoo/glider/proxy/ssr/internal/ssr"
-	"github.com/nadoo/glider/proxy/ssr/internal/tools"
+	"github.com/zhfreal/glider/proxy/ssr/internal/ssr"
+	"github.com/zhfreal/glider/proxy/ssr/internal/tools"
 )
 
 type creator func() IProtocol

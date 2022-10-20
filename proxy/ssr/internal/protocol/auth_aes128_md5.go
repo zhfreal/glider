@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nadoo/glider/proxy/ssr/internal/ssr"
-	"github.com/nadoo/glider/proxy/ssr/internal/tools"
+	"github.com/zhfreal/glider/proxy/ssr/internal/ssr"
+	"github.com/zhfreal/glider/proxy/ssr/internal/tools"
 )
 
 func init() {

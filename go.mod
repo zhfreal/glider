@@ -1,4 +1,4 @@
-module github.com/nadoo/glider
+module github.com/zhfreal/glider
 
 go 1.18
 
@@ -8,8 +8,8 @@ require (
 	github.com/dgryski/go-idea v0.0.0-20170306091226-d2fb45a411fb
 	github.com/dgryski/go-rc2 v0.0.0-20150621095337-8a9021637152
 	github.com/insomniacslk/dhcp v0.0.0-20220504074936-1ca156eafb9f
-	github.com/nadoo/conflag v0.3.1
-	github.com/nadoo/ipset v0.5.0
+	github.com/zhfreal/conflag v0.3.1
+	github.com/zhfreal/ipset v0.5.0
 	github.com/xtaci/kcp-go/v5 v5.6.1
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a
@@ -32,5 +32,5 @@ require (
 // Replace dependency modules with local developing copy
 // use `go list -m all` to confirm the final module used
 // replace (
-//	github.com/nadoo/conflag => ../conflag
+//	github.com/zhfreal/conflag => ../conflag
 // )

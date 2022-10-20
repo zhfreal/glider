@@ -7,7 +7,7 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/nadoo/glider/pkg/sockopt"
+	"github.com/zhfreal/glider/pkg/sockopt"
 )
 
 // Direct proxy.

@@ -10,8 +10,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/nadoo/glider/pkg/pool"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/pool"
+	"github.com/zhfreal/glider/proxy"
 )
 
 var keyGUID = []byte("258EAFA5-E914-47DA-95CA-C5AB0DC85B11")

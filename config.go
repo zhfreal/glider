@@ -5,12 +5,12 @@ import (
 	"os"
 	"path"
 
-	"github.com/nadoo/conflag"
+	"github.com/zhfreal/conflag"
 
-	"github.com/nadoo/glider/dns"
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/proxy"
-	"github.com/nadoo/glider/rule"
+	"github.com/zhfreal/glider/dns"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/proxy"
+	"github.com/zhfreal/glider/rule"
 )
 
 var flag = conflag.New()
@@ -217,7 +217,7 @@ Help:
 
 see README.md and glider.conf.example for more details.
 --
-glider %s, https://github.com/nadoo/glider (glider.proxy@gmail.com)
+glider %s, https://github.com/zhfreal/glider (glider.proxy@gmail.com)
 `
 
 var examples = `

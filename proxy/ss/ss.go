@@ -3,9 +3,9 @@ package ss
 import (
 	"net/url"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/proxy"
-	"github.com/nadoo/glider/proxy/ss/cipher"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/proxy"
+	"github.com/zhfreal/glider/proxy/ss/cipher"
 )
 
 // SS is a base ss struct.

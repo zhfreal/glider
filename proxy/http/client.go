@@ -6,9 +6,9 @@ import (
 	"net"
 	"net/textproto"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/pkg/pool"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/pkg/pool"
+	"github.com/zhfreal/glider/proxy"
 )
 
 // NewHTTPDialer returns a http proxy dialer.

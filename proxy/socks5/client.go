@@ -7,10 +7,10 @@ import (
 	"net/netip"
 	"strconv"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/pkg/pool"
-	"github.com/nadoo/glider/pkg/socks"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/pkg/pool"
+	"github.com/zhfreal/glider/pkg/socks"
+	"github.com/zhfreal/glider/proxy"
 )
 
 func init() {

@@ -18,8 +18,8 @@ import (
 	"golang.org/x/crypto/cast5"
 	"golang.org/x/crypto/salsa20/salsa"
 
-	"github.com/nadoo/glider/pkg/pool"
-	"github.com/nadoo/glider/proxy/ssr/internal/tools"
+	"github.com/zhfreal/glider/pkg/pool"
+	"github.com/zhfreal/glider/proxy/ssr/internal/tools"
 )
 
 var errEmptyPassword = errors.New("empty key")
@@ -115,7 +115,7 @@ func (c *salsaStreamCipher) XORKeyStream(dst, src []byte) {
 	dataSize := len(src) + padLen
 	if cap(dst) >= dataSize {
 		buf = dst[:dataSize]
-		// nadoo: comment out codes here to use pool buffer
+		// zhfreal: comment out codes here to use pool buffer
 		// modify start -->
 		// } else if leakybuf.GlobalLeakyBufSize >= dataSize {
 		// 	buf = leakybuf.GlobalLeakyBuf.Get()

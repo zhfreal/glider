@@ -28,7 +28,7 @@ import (
 	"math/rand"
 	"net"
 
-	"github.com/nadoo/glider/pkg/pool"
+	"github.com/zhfreal/glider/pkg/pool"
 )
 
 const (

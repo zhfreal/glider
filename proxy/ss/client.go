@@ -4,9 +4,9 @@ import (
 	"errors"
 	"net"
 
-	"github.com/nadoo/glider/pkg/log"
-	"github.com/nadoo/glider/pkg/socks"
-	"github.com/nadoo/glider/proxy"
+	"github.com/zhfreal/glider/pkg/log"
+	"github.com/zhfreal/glider/pkg/socks"
+	"github.com/zhfreal/glider/proxy"
 )
 
 // NewSSDialer returns a ss proxy dialer.
