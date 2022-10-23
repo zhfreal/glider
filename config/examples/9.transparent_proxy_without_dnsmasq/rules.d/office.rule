@@ -11,6 +11,7 @@ forward=http://forwarder2:8080,socks5://forwarder3:1080
 strategy=rr
 # forwarder health check
 check=http://www.msftconnecttest.com/connecttest.txt#expect=200
+# in seconds
 checkinterval=30
 
 # specify a different dns server(if need)

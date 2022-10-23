@@ -44,16 +44,16 @@ const ClassINET uint16 = 1
 // format called a message.  The top level format of message is divided
 // into 5 sections (some of which are empty in certain cases) shown below:
 //
-//     +---------------------+
-//     |        Header       |
-//     +---------------------+
-//     |       Question      | the question for the name server
-//     +---------------------+
-//     |        Answer       | RRs answering the question
-//     +---------------------+
-//     |      Authority      | RRs pointing toward an authority
-//     +---------------------+
-//     |      Additional     | RRs holding additional information
+//	+---------------------+
+//	|        Header       |
+//	+---------------------+
+//	|       Question      | the question for the name server
+//	+---------------------+
+//	|        Answer       | RRs answering the question
+//	+---------------------+
+//	|      Authority      | RRs pointing toward an authority
+//	+---------------------+
+//	|      Additional     | RRs holding additional information
 type Message struct {
 	Header
 	// most dns implementation only support 1 question
@@ -169,22 +169,21 @@ func UnmarshalMessage(b []byte) (*Message, error) {
 // https://www.rfc-editor.org/rfc/rfc1035#section-4.1.1
 // The header contains the following fields:
 //
-//                                     1  1  1  1  1  1
-//       0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                      ID                       |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                    QDCOUNT                    |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                    ANCOUNT                    |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                    NSCOUNT                    |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                    ARCOUNT                    |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//
+//	                                1  1  1  1  1  1
+//	  0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                      ID                       |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|QR|   Opcode  |AA|TC|RD|RA|   Z    |   RCODE   |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                    QDCOUNT                    |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                    ANCOUNT                    |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                    NSCOUNT                    |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                    ARCOUNT                    |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 type Header struct {
 	ID      uint16
 	Bits    uint16
@@ -214,7 +213,7 @@ func (h *Header) SetAncount(ancount int) {
 	h.ANCOUNT = uint16(ancount)
 }
 
-func (h *Header) setFlag(QR uint16, Opcode uint16, AA uint16,
+func (h *Header) SetFlag(QR uint16, Opcode uint16, AA uint16,
 	TC uint16, RD uint16, RA uint16, RCODE uint16) {
 	h.Bits = QR<<15 + Opcode<<11 + AA<<10 + TC<<9 + RD<<8 + RA<<7 + RCODE
 }
@@ -250,17 +249,17 @@ func UnmarshalHeader(b []byte, h *Header) error {
 // i.e., the parameters that define what is being asked.  The section
 // contains QDCOUNT (usually 1) entries, each of the following format:
 //
-//                                     1  1  1  1  1  1
-//       0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                                               |
-//     /                     QNAME                     /
-//     /                                               /
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                     QTYPE                     |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                     QCLASS                    |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	                                1  1  1  1  1  1
+//	  0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                                               |
+//	/                     QNAME                     /
+//	/                                               /
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                     QTYPE                     |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                     QCLASS                    |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 type Question struct {
 	QNAME  string
 	QTYPE  uint16
@@ -328,26 +327,26 @@ func (m *Message) UnmarshalQuestion(b []byte, q *Question) (n int, err error) {
 // records is specified in the corresponding count field in the header.
 // Each resource record has the following format:
 //
-//                                     1  1  1  1  1  1
-//       0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                                               |
-//     /                                               /
-//     /                      NAME                     /
-//     |                                               |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                      TYPE                     |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                     CLASS                     |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                      TTL                      |
-//     |                                               |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
-//     |                   RDLENGTH                    |
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--|
-//     /                     RDATA                     /
-//     /                                               /
-//     +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	                                1  1  1  1  1  1
+//	  0  1  2  3  4  5  6  7  8  9  0  1  2  3  4  5
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                                               |
+//	/                                               /
+//	/                      NAME                     /
+//	|                                               |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                      TYPE                     |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                     CLASS                     |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                      TTL                      |
+//	|                                               |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+//	|                   RDLENGTH                    |
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--|
+//	/                     RDATA                     /
+//	/                                               /
+//	+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 type RR struct {
 	NAME     string
 	TYPE     uint16

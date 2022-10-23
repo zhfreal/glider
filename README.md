@@ -46,35 +46,35 @@ we can set up local listeners as proxy servers, and forward requests to internet
 <details>
 <summary>click to see details</summary>
 
-|Protocol       | Listen/TCP |  Listen/UDP | Forward/TCP | Forward/UDP | Description
-|:-:            |:-:|:-:|:-:|:-:|:-
-|Mixed          |√|√| | |http+socks5 server
-|HTTP           |√| |√| |client & server
-|SOCKS5         |√|√|√|√|client & server
-|SS             |√|√|√|√|client & server
-|Trojan         |√|√|√|√|client & server
-|Trojanc        |√|√|√|√|trojan cleartext(without tls)
-|VLESS          |√|√|√|√|client & server
-|VMess          | | |√|√|client only
-|SSR            | | |√| |client only
-|SSH            | | |√| |client only
-|SOCKS4         | | |√| |client only
-|SOCKS4A        | | |√| |client only
-|TCP            |√| |√| |tcp tunnel client & server
-|UDP            | |√| |√|udp tunnel client & server
-|TLS            |√| |√| |transport client & server
-|KCP            | |√|√| |transport client & server
-|Unix           |√|√|√|√|transport client & server
-|VSOCK          |√| |√| |transport client & server
-|Smux           |√| |√| |transport client & server
-|Websocket(WS)  |√| |√| |transport client & server
-|WS Secure      |√| |√| |websocket secure (wss)
-|Proxy Protocol |√| | | |version 1 server only
-|Simple-Obfs    | | |√| |transport client only
-|Redir          |√| | | |linux redirect proxy
-|Redir6         |√| | | |linux redirect proxy(ipv6)
-|TProxy         | |√| | |linux tproxy(udp only)
-|Reject         | | |√|√|reject all requests
+|    Protocol    | Listen/TCP | Listen/UDP | Forward/TCP | Forward/UDP | Description                   |
+| :------------: | :--------: | :--------: | :---------: | :---------: | :---------------------------- |
+|     Mixed      |     √      |     √      |             |             | http+socks5 server            |
+|      HTTP      |     √      |            |      √      |             | client & server               |
+|     SOCKS5     |     √      |     √      |      √      |      √      | client & server               |
+|       SS       |     √      |     √      |      √      |      √      | client & server               |
+|     Trojan     |     √      |     √      |      √      |      √      | client & server               |
+|    Trojanc     |     √      |     √      |      √      |      √      | trojan cleartext(without tls) |
+|     VLESS      |     √      |     √      |      √      |      √      | client & server               |
+|     VMess      |            |            |      √      |      √      | client only                   |
+|      SSR       |            |            |      √      |             | client only                   |
+|      SSH       |            |            |      √      |             | client only                   |
+|     SOCKS4     |            |            |      √      |             | client only                   |
+|    SOCKS4A     |            |            |      √      |             | client only                   |
+|      TCP       |     √      |            |      √      |             | tcp tunnel client & server    |
+|      UDP       |            |     √      |             |      √      | udp tunnel client & server    |
+|      TLS       |     √      |            |      √      |             | transport client & server     |
+|      KCP       |            |     √      |      √      |             | transport client & server     |
+|      Unix      |     √      |     √      |      √      |      √      | transport client & server     |
+|     VSOCK      |     √      |            |      √      |             | transport client & server     |
+|      Smux      |     √      |            |      √      |             | transport client & server     |
+| Websocket(WS)  |     √      |            |      √      |             | transport client & server     |
+|   WS Secure    |     √      |            |      √      |             | websocket secure (wss)        |
+| Proxy Protocol |     √      |            |             |             | version 1 server only         |
+|  Simple-Obfs   |            |            |      √      |             | transport client only         |
+|     Redir      |     √      |            |             |             | linux redirect proxy          |
+|     Redir6     |     √      |            |             |             | linux redirect proxy(ipv6)    |
+|     TProxy     |            |     √      |             |             | linux tproxy(udp only)        |
+|     Reject     |            |            |      √      |      √      | reject all requests           |
 
 </details>
 
@@ -117,17 +117,17 @@ OPTION:
   -checkdisabledonly
         check disabled fowarders only
   -checkinterval int
-        fowarder check interval(seconds) (default 30)
+        fowarder check interval in seconds (default 30)
   -checklatencysamples int
         use the average latency of the latest N checks (default 10)
   -checktimeout int
-        fowarder check timeout(seconds) (default 10)
+        fowarder check timeout in milliseconds (default 10000)
   -checktolerance int
-        fowarder check tolerance(ms), switch only when new_latency < old_latency - tolerance, only used in lha mode
+        fowarder check tolerance in milliseconds, switch to new forwarder only when new_latency < old_latency - tolerance, only used in lha mode
   -config string
         config file path
   -dialtimeout int
-        dial timeout(seconds) (default 3)
+        dial timeout in milliseconds (default 3000)
   -dns string
         local dns server listen address
   -dnsalwaystcp
@@ -147,7 +147,7 @@ OPTION:
   -dnsserver value
         remote dns server address
   -dnstimeout int
-        timeout value used in multiple dnsservers switch(seconds) (default 3)
+        timeout value used in multiple dnsservers switch in milliseconds (default 3000)
   -example
         show usage examples
   -forward value
@@ -163,7 +163,7 @@ OPTION:
   -maxfailures int
         max failures to change forwarder status to disabled (default 3)
   -relaytimeout int
-        relay timeout(seconds)
+        relay timeout in milliseconds (default 0)
   -rulefile value
         rule file path
   -rules-dir string

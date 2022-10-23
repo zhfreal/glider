@@ -37,7 +37,7 @@ strategy=rr
 # forwarder health check
 check=http://www.msftconnecttest.com/connecttest.txt#expect=200
 
-# check interval
+# check interval in seconds
 checkinterval=30
 
 

@@ -15,6 +15,7 @@ strategy=rr
 
 # FORWARDER CHECK SETTINGS
 check=http://www.msftconnecttest.com/connecttest.txt#expect=200
+# in seconds
 checkinterval=30
 
 # DNS SERVER for domains in this rule file

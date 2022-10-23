@@ -56,7 +56,8 @@ func main() {
 		net.DefaultResolver = &net.Resolver{
 			PreferGo: true,
 			Dial: func(ctx context.Context, network, address string) (net.Conn, error) {
-				d := net.Dialer{Timeout: time.Second * 3}
+				// d := net.Dialer{Timeout: time.Second * 3}
+				d := net.Dialer{Timeout: time.Duration(config.DNSConfig.Timeout) * time.Millisecond}
 				return d.DialContext(ctx, "udp", config.DNS)
 			},
 		}

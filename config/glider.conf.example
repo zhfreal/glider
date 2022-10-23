@@ -184,7 +184,7 @@ maxfailures=3
 # timeout for create a connection(seconds)
 # dialtimeout=3
 
-# timeout for relay data from proxy server and client(seconds)
+# timeout for relay data from proxy server and client in milliseconds
 # DO NOT change it if you don't know what will happen. 
 # relaytimeout=0
 
@@ -202,13 +202,14 @@ maxfailures=3
 # check=disable: disable health check
 check=http://www.msftconnecttest.com/connecttest.txt#expect=200
 
-# check interval(seconds)
+# check interval in seconds
 checkinterval=30
 
-# timeout to set a forwarder to be disabled(seconds)
-checktimeout=10
+# timeout to set a forwarder to be disabled in milliseconds
+checktimeout=10000
 
-# switch forwarder only when new_latency < old_latency - tolerance, used in lha mode
+# fowarder check tolerance in milliseconds, switch to new forwarder only when new_latency < old_latency - checktolerance
+# used in lha mode
 checktolerance=100
 
 # use the average latency of the latest N checks
@@ -233,8 +234,8 @@ dnsserver=1.1.1.1:53
 # you can set dnsalwaystcp=true to always use tcp no matter there is a forwarder or not.
 # dnsalwaystcp=false
 
-# timeout value used in multiple dnsservers switch(seconds)
-dnstimeout=3
+# timeout value used in multiple dnsservers switch in milliseconds
+dnstimeout=3000
 
 # maximum TTL value for entries in the CACHE(seconds)
 dnsmaxttl=1800
