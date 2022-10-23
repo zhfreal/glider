@@ -14,6 +14,7 @@ import (
 )
 
 var flag = conflag.New()
+var showVersion bool
 
 // Config is global config struct.
 type Config struct {
@@ -91,11 +92,19 @@ check=disable: disable health check`)
 	// service configs
 	flag.StringSliceUniqVar(&conf.Services, "service", nil, "run specified services, format: SERVICE_NAME[,SERVICE_CONFIG]")
 
+	// show version
+	flag.BoolVar(&showVersion, "version", false, "show version")
+
 	flag.Usage = usage
 	if err := flag.Parse(); err != nil {
 		// flag.Usage()
 		fmt.Fprintf(os.Stderr, "ERROR: %s\n", err)
 		os.Exit(-1)
+	}
+
+	if showVersion {
+		fmt.Printf("glider %s\n", version)
+		os.Exit(0)
 	}
 
 	if *scheme != "" {
